@@ -51,7 +51,8 @@ void SnowScript::Start() {
     // Get the animator.
     animator = (Animator *)GetOwner()->GetComponent("Animator");
     input = InputSystem::GetInstance();
-    GetOwner()->SetZoomProportion(Vector(vectorZoomProportionAxisX, vectorZoomProportionAxisY));
+    GetOwner()->SetZoomProportion(Vector(vectorZoomProportionAxisX,
+                                         vectorZoomProportionAxisY));
 }
 
 /**
@@ -68,8 +69,9 @@ void SnowScript::CreateAnimations() {
 
     // Create the animations by adding the snowflakes in the frames.
     for (int i = 0; i < maxSnowFlakes; i++) {
-        snowAnimation->AddFrame(new Frame(i * snowAnimationPositionAxisX, snowAnimationPositionAxisY,
-                                 snowAnimationWigth, snowAnimationHeight));
+        snowAnimation->AddFrame(new Frame(i * snowAnimationPositionAxisX,
+                                snowAnimationPositionAxisY, snowAnimationWigth,
+                                snowAnimationHeight));
     } // for -- Create the animations snow.
 
     // Creates the animator.
@@ -85,6 +87,8 @@ void SnowScript::ComponentUpdate() {
     // Start the snow animation.
     if (play == 1) {
         animator->PlayAnimation("snowAnimation");
+    } else {
+        // Nothing to do
     }
 
     // Update the play variable and the sound effect.
@@ -95,6 +99,8 @@ void SnowScript::ComponentUpdate() {
         play = 0;
         AudioController::GetInstance()->StopAudio("snowSound");
         animator->StopAllAnimations();
+    } else {
+        // Nothing to do
     }
 }
 

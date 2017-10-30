@@ -21,6 +21,8 @@ Animation::Animation(GameObject *owner, Image *image, bool playOnStart)
     // Image validation.
     if (!image) {
         ERROR("Null image not allowed");
+    } else {
+        // Nothing to do
     }
     m_image = image;
     m_isPlaying = playOnStart;
@@ -62,7 +64,7 @@ void Animation::SetPlaying(bool condition) {
     if (m_isPlaying == condition) {
         return;
     } else {
-        //nothing to do.
+        // Nothing to do
     }
 
     // Checks if condition variable is true.
@@ -70,7 +72,7 @@ void Animation::SetPlaying(bool condition) {
         if (auto comp = GetOwner()->GetComponent("Renderer")) {
             comp->m_active = false;
         } else {
-            //nothing to do.
+            // Nothing to do
         }
     } else {
         if (m_hasExitTime && m_currentFrame != m_framesQuantity - 1) {
@@ -79,7 +81,7 @@ void Animation::SetPlaying(bool condition) {
             if (auto comp = GetOwner()->GetComponent("Renderer")) {
                 comp->m_active = true;
             } else {
-                //nothing to do.
+                // Nothing to do
             }
         }
     } // else -- condition variable.
@@ -96,7 +98,7 @@ void Animation::AddFrame(Frame *frame) {
     if (!frame) {
         ERROR("Null frame pointer");
     } else {
-        //nothing to do.
+        // Nothing to do
     }
 
     m_frames.push_back(frame);
@@ -112,10 +114,10 @@ void Animation::ComponentUpdate() {
         if (!m_loop && m_currentFrame == m_framesQuantity - 1) {
             SetPlaying(false);
         } else {
-            //nothing to do.
+            // Nothing to do
         }
     } else {
-        //nothing to do.
+        // Nothing to do
     }
 }
 
