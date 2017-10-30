@@ -1,6 +1,7 @@
 /**
     @file TopCenterLightScript.cpp
-    @brief This class contains all attributes and methods that manages the central light in the game.
+    @brief This class contains all attributes and methods that manages the
+    central light in the game.
     @copyright LGPL. MIT License.
 */
 
@@ -40,14 +41,18 @@ void TopCenterLightScript::Start() {
     m_animator = (Animator *)GetOwner()->GetComponent("Animator");
     m_input = InputSystem::GetInstance();
     m_gameController = m_input->GetGameController(0);
-    GetOwner()->SetZoomProportion(Vector(0,0));
+    GetOwner()->SetZoomProportion(Vector(0, 0));
     auto map = SceneManager::GetInstance()->GetScene("Gameplay")->
                GetGameObject("Map");
 
     // verify if the map variable is instanced and set zoom.
-    if(map) {
-      GetOwner()->SetZoomProportion(Vector(map->originalWidth / GetOwner()->originalWidth,
-                                           map->originalHeight / GetOwner()->originalHeight));
+    if (map) {
+      GetOwner()->SetZoomProportion(Vector(map->originalWidth
+                                           / GetOwner()->originalWidth,
+                                           map->originalHeight
+                                           / GetOwner()->originalHeight));
+    } else {
+        // Nothing to do
     }
 
 }
@@ -59,11 +64,14 @@ void TopCenterLightScript::Start() {
 void TopCenterLightScript::CreateAnimations() {
 
     // Creates the image.
-    auto topCenterLightSprite = new Image("assets/topcenter.png", imagePositionX, imagePositionY, imageWidth, imageHeight);
+    auto topCenterLightSprite = new Image("assets/topcenter.png",
+                                          imagePositionX, imagePositionY,
+                                          imageWidth, imageHeight);
 
     // Creates the animation of central light.
     auto topCenterLightAnimation = new Animation(GetOwner(), topCenterLightSprite);
-    topCenterLightAnimation->AddFrame(new Frame(framePositionX, framePositionY, frameWidth, frameHeight));
+    topCenterLightAnimation->AddFrame(new Frame(framePositionX, framePositionY,
+                                                frameWidth, frameHeight));
 
     auto topCenterLightAnimator = new Animator(GetOwner());
     topCenterLightAnimation->SetFramesPerSecond(framesPerSecond);
@@ -80,8 +88,10 @@ void TopCenterLightScript::CreateAnimations() {
 void TopCenterLightScript::ComponentUpdate() {
 
     // Starting the animator of game.
-    if(!m_animator->IsPlaying("CENTRAL LIGHT ANIMATION") && active) {
+    if (!m_animator->IsPlaying("CENTRAL LIGHT ANIMATION") && active) {
         m_animator->PlayAnimation("CENTRAL LIGHT ANIMATION");
+    } else {
+        // Nothing to do
     }
 }
 

@@ -32,13 +32,14 @@ void MissileButtonScript::ComponentUpdate() {
     // Checks the button status.
     if (m_uiButton->IsClicked()) {
         MenuController::GetInstance()->SelectGamemode(0x01);
+    } else {
+        // Nothing to do
     }
 
     // Checks the gamemode status and activate or desactivate the checkbox.
     if (MenuController::GetInstance()->GetGamemode() & 0x01) {
         m_checkbox->active = true;
-    }
-    else {
+    } else {
         m_checkbox->active = false;
     }
 }
