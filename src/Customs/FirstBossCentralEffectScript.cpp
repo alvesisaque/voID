@@ -47,7 +47,7 @@ void FirstBossCentralEffectScript::Start() {
 void FirstBossCentralEffectScript::CreateAnimations() {
 
     // Image Attacks.
-    auto firstBossCentralImage1 = new Image("assets/centroboss11.png", 0, 0, 
+    auto firstBossCentralImage1 = new Image("assets/centerBoss11.png", 0, 0, 
                                             centralImageWidth, centralImageheight);
 
     // Surge Animation.
