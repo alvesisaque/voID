@@ -20,6 +20,7 @@ Rigidbody::Rigidbody(GameObject *owner) : Component(owner, C_PHYSICS) {}
     @brief Updates the position of a fixed component, based on it velocity.
 */
 void Rigidbody::FixedComponentUpdate() {
+    INFO("Rigidbody- Fix the component update");
     // Check for gravity, and if exists, sets its force on a vector.
     if (m_gravity) {
         GetOwner()->AddVelocity(Vector(0, m_gravityForce));
