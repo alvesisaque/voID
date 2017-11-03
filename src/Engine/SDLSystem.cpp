@@ -46,7 +46,7 @@ SDLSystem::~SDLSystem() {
     @brief Initialize all systems.
 */
 void SDLSystem::Init() {
-    INFO("SDLSystem - initialized");
+    INFO("SDLSystem - initializing");
 
     // Check initialization fails
     if (!(InitSDL() && InitIMG() && InitMixer() && InitTTF())) {
