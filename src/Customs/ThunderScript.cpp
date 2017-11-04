@@ -77,18 +77,17 @@ void ThunderScript::ComponentUpdate() {
     // Checks the input status to set the blue animation.
     if (m_input->GetKeyDown(INPUT_1)) {
         m_animator->PlayAnimation("thunderBlueAnimation");
+    } else {
+        // Do nothing
     }
 
     // Checks the input status to set the yellow animation.
     if (m_input->GetKeyDown(INPUT_2)) {
         m_animator->PlayAnimation("thunderYellowAnimation");
     } else {
-        //nothing to do.
+        //Do nothing
     }
 }
 
-/**
-    @brief Do nothing.
-*/
 void ThunderScript::FixedComponentUpdate() {
 }

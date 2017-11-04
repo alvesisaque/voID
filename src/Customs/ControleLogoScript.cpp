@@ -81,15 +81,21 @@ void ControleLogoScript::FixedComponentUpdate() {
     // Compares time to play the animation.
     if (time.GetTime() >= timePlayAnimation) {
         m_animator->PlayAnimation("CONTROLE ANIMATION");
+    } else {
+        // Do nothing
     }
 
     // Compares time to stop the animation.
     if (time.GetTime() >= timeStopAnimation) {
         m_animator->StopAllAnimations();
+    } else {
+        // Do nothing
     }
 
     // Compares time to update the animation.
     if (time.GetTime() >= timeUpdateAnimation) {
         SceneManager::GetInstance()->SetCurrentScene("Main");
+    } else {
+        // Do nothing
     }
 }
