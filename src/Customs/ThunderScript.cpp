@@ -21,13 +21,14 @@ const int blueCounter = 6;
     @brief Constructor for the ThunderScript class.
     @param[in] owner
 */
-ThunderScript::ThunderScript(GameObject *owner) : Script(owner) {}
+ThunderScript::ThunderScript(GameObject *owner) : Script(owner) {
+    INFO("ThunderScript - initialized");
+}
 
 /**
     @brief Start the animation for thunder in game.
 */
 void ThunderScript::Start() {
-    INFO("ThunderScript - initializing");
     /*
         Creates the animations defining position the place to insert
         and the scene that will be inserted.
@@ -37,7 +38,7 @@ void ThunderScript::Start() {
     m_animator = (Animator *)GetOwner()->GetComponent("Animator");
     m_input = InputSystem::GetInstance();
     GetOwner()->SetZoomProportion(Vector(0,0));
-    INFO("ThunderScript - initialized");
+    
 }
 
 /**
