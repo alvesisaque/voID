@@ -45,12 +45,16 @@ void FirstBossLifeScript::ComponentUpdate() {
         cout << actualLife << endl;
         firstBossLifeRenderer->SetWidth(actualLife - lifePosition);
         hit = false;
+    } else {
+        // Do nothing
     }
 
     // Compares the actual life. 
     if (actualLife <= lifeComparer) {
         FirstBossController::GetInstance()->ActivateCreditsAnimation();
         FirstBossController::GetInstance()->DeactivateLifeBars();
+    } else {
+        // Do nothing
     }
 }
 
