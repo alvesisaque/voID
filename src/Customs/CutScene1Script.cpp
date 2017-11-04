@@ -37,7 +37,10 @@ void CutScene1Script::Start() {
                                              ->originalWidth, map
                                              -> originalHeight / GetOwner()
                                              -> originalHeight));
+    } else {
+        // Do nothing
     }
+    
     INFO("CutScene1Script - initialized");
 }
 
@@ -69,11 +72,15 @@ void CutScene1Script::ComponentUpdate() {
     // Compares the animator state.
     if(!m_animator->IsPlaying("CENTRAL LIGHT ANIMATION") && m_active) {
         m_animator->PlayAnimation("CENTRAL LIGHT ANIMATION");
+    } else {
+        // Do nothing
     }
 
     // Checks the animator state.
     if(m_animator->IsPlaying("CENTRAL LIGHT ANIMATION")) {
         m_animator->PlayAnimation("CENTRAL LIGHT ANIMATION");
+    } else {
+        // Do nothing
     }
 }
 
