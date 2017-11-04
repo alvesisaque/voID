@@ -27,6 +27,7 @@ ThunderScript::ThunderScript(GameObject *owner) : Script(owner) {}
     @brief Start the animation for thunder in game.
 */
 void ThunderScript::Start() {
+    INFO("ThunderScript - initializing");
     /*
         Creates the animations defining position the place to insert
         and the scene that will be inserted.
@@ -36,12 +37,14 @@ void ThunderScript::Start() {
     m_animator = (Animator *)GetOwner()->GetComponent("Animator");
     m_input = InputSystem::GetInstance();
     GetOwner()->SetZoomProportion(Vector(0,0));
+    INFO("ThunderScript - initialized");
 }
 
 /**
     @brief Create animations of thunders with different colors.
 */
 void ThunderScript::CreateAnimations() {
+    INFO("ThunderScript - Creating animations");
     //Image Thunder.
     auto thunderImage = new Image("assets/Sprites/dashes.png", 0, 0, thunderWidth, thunderHeight);
 
@@ -66,8 +69,9 @@ void ThunderScript::CreateAnimations() {
     auto thunderAnimator = new Animator(GetOwner());
 
     thunderAnimator->AddAnimation("thunderBlueAnimation", thunderBlueAnimation);
-    thunderAnimator->AddAnimation("thunderYellowAnimation",
-                                  thunderYellowAnimation);
+    thunderAnimator->AddAnimation("thunderYellowAnimation",thunderYellowAnimation);
+
+    INFO("ThunderScript - Animations created.");
 }
 
 /**

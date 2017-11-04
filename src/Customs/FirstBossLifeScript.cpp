@@ -24,9 +24,11 @@ FirstBossLifeScript::FirstBossLifeScript(GameObject *owner) : Script(owner) {
     @brief Start the script that control the life of the first boss.
 */
 void FirstBossLifeScript::Start() {
+    INFO("FirstBossLifeScript - initializing");
     // Define the position of life bar.
     position = GetOwner()->GetPosition();
     GetOwner()->SetZoomProportion(Vector(0,0));
+    INFO("FirstBossLifeScript - initialized");
 }
 
 /**
