@@ -1,6 +1,5 @@
 #include "Customs/CutScene1Script.hpp"
 #include "Globals/EngineGlobals.hpp"
-#include "Log/log.hpp"
 
 const int imageWidth = 1705;
 const int imageHeight = 255;
