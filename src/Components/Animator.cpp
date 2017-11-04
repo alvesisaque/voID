@@ -10,7 +10,9 @@
     @param[in] owner
     @param[in] C_DRAW Enumerator from ComponentTypes.
 */
-Animator::Animator(GameObject *owner) : Component(owner, C_DRAW) {}
+Animator::Animator(GameObject *owner) : Component(owner, C_DRAW) {
+    INFO("Animator - initialized");
+}
 
 /**
     @brief Add a animation to a map of Animation pointers.

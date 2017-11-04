@@ -17,18 +17,17 @@ const int bossLifeY = 10;
     @brief Constructor of the FirstBossLifeScript class.
 */
 FirstBossLifeScript::FirstBossLifeScript(GameObject *owner) : Script(owner) {
-
+    INFO("FirstBossLifeScript - initialized");
 }
 
 /**
     @brief Start the script that control the life of the first boss.
 */
 void FirstBossLifeScript::Start() {
-    INFO("FirstBossLifeScript - initializing");
+    INFO("FirstBossLifeScript - Start initializing");
     // Define the position of life bar.
     position = GetOwner()->GetPosition();
     GetOwner()->SetZoomProportion(Vector(0,0));
-    INFO("FirstBossLifeScript - initialized");
 }
 
 /**

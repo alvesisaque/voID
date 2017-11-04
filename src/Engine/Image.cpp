@@ -13,7 +13,7 @@
     @brief Simple constructor of the Image class.
 */
 Image::Image() {
-
+    INFO("Image - initialized");
 }
 
 /**
@@ -112,6 +112,7 @@ void Image::SetPivot(int _x, int _y) {
     @param[in] vertical Inform if the image must be flipped vertically.
 */
 void Image::Flip(bool horizontal, bool vertical) {
+
     m_horizontalFlip = horizontal;
     m_verticalFlip = vertical;
 
