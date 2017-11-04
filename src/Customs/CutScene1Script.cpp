@@ -1,5 +1,6 @@
 #include "Customs/CutScene1Script.hpp"
 #include "Globals/EngineGlobals.hpp"
+#include "Log/log.hpp"
 
 const int imageWidth = 1705;
 const int imageHeight = 255;
@@ -18,6 +19,7 @@ CutScene1Script::CutScene1Script(GameObject *owner) : Script(owner) {}
     @brief Start the animation for the cut scene 1.
 */
 void CutScene1Script::Start() {
+    INFO("CutScene1Script - initializing");
     /*
         Creates the animations defining position the place to insert
         and the scene that will be inserted.
@@ -36,13 +38,14 @@ void CutScene1Script::Start() {
                                              -> originalHeight / GetOwner()
                                              -> originalHeight));
     }
+    INFO("CutScene1Script - initialized");
 }
 
 /**
     @brief Create the animations of the cut scene 1.
 */
 void CutScene1Script::CreateAnimations() {
-
+    INFO("CutScene1Script - Creating animations");
     // Image light sprite.
     auto centrallightSprite = new Image("assets/cut1.png", 0, 0, imageWidth, imageHeight);
 
@@ -55,6 +58,8 @@ void CutScene1Script::CreateAnimations() {
     centrallightAnimation->SetFramesPerSecond(framesPerSecond);
     centrallightAnimator->AddAnimation("CENTRAL LIGHT ANIMATION",
                                        centrallightAnimation);
+
+    INFO("CutScene1Script - Animations created");
 }
 
 /**
