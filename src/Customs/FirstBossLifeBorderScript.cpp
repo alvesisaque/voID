@@ -37,7 +37,7 @@ FirstBossLifeBorderScript::FirstBossLifeBorderScript(GameObject *owner) :
     @brief Start the animation for the first boss life border effect.
 */
 void FirstBossLifeBorderScript::Start() {
-
+    INFO("FirstBossLifeBorderScript - Initializing");
     CreateAnimations();
 
     // Creates the animator.
@@ -48,13 +48,14 @@ void FirstBossLifeBorderScript::Start() {
     firstBossAttackCollider = new RectangleCollider(GetOwner(), Vector(vectorAxisX, vectorAxisY),
                                                   GetOwner()->GetWidth(),
                                                   GetOwner()->GetHeight(), 0);
-
+    INFO("FirstBossLifeBorderScript - Initialized");
 }
 
 /**
     @brief Create the first boss life border effect animations.
 */
 void FirstBossLifeBorderScript::CreateAnimations() {
+    INFO("FirstBossLifeBorderScript - Creating animations");
 
     // Creates the image.
     auto firstBossLifeBorderImage = new Image("assets/boss_life_bar.png",imageBorderPositionX,
@@ -76,6 +77,8 @@ void FirstBossLifeBorderScript::CreateAnimations() {
     auto firstBossLifeBorderAnimator = new Animator(GetOwner());
     firstBossLifeBorderAnimator->AddAnimation("firstBossLifeBorderAnimation",
                                                 firstBossLifeBorderAnimation);
+
+    INFO("FirstBossLifeBorderScript - Animations created");
 }
 
 /**

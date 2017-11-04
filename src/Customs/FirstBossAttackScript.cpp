@@ -6,6 +6,7 @@
 
 #include "Customs/FirstBossAttackScript.hpp"
 #include "Customs/AudioController.hpp"
+#include "Log/log.hpp"
 
 const int imageHeight = 151;
 const int imageWidth = 600;
@@ -19,7 +20,7 @@ const int framesNumber = 40;
     @brief Constructor for the FirstBossAttackScript class.
 */
 FirstBossAttackScript::FirstBossAttackScript(GameObject *owner) : Script(owner) {
-
+    INFO("FirstBossAttackScript - initialized");
 }
 
 /**
@@ -87,6 +88,7 @@ void FirstBossAttackScript::CreateAnimations() {
     //Gone Animator of boss attack.
     firstBossAttackAnimator->AddAnimation("firstBossAttackGoneAnimation",
                                             firstBossAttackGoneAnimation);
+
 }
 
 /**

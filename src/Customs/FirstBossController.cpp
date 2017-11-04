@@ -14,18 +14,20 @@ const int currentTentacleNumber = 4;
 FirstBossController *FirstBossController::m_instance = nullptr;
 
 FirstBossController *FirstBossController::GetInstance() {
+    INFO("FirstBossController - Initializing");
     // Checks if the first boss controller was instantiated, if not, instantiates it.
     if (!m_instance){
         m_instance = new FirstBossController();
     } else {
         // Do nothing
     }
-    
+
+    INFO("FirstBossController - Initialized");
     return m_instance;
 }
 
 FirstBossController::FirstBossController() {
-
+    INFO("FirstBossController - Initializing");
 }
 
 void FirstBossController::StartBossFight() {
@@ -165,12 +167,12 @@ void FirstBossController::DeactivateTentacle(int tentacleIndex) {
 // Methods of define the attack of boss.
 
 std::pair <int, int> FirstBossController::GetRandomPosition() {
-  srand(time(NULL));
+    srand(time(NULL));
 
-  randomPosition.first = rand();
-  randomPosition.second = rand();
+    randomPosition.first = rand();
+    randomPosition.second = rand();
 
-  return randomPosition;
+    return randomPosition;
 }
 
 void FirstBossController::FirstAttackSurge() {
