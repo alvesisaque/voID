@@ -17,7 +17,10 @@ FirstBossController *FirstBossController::GetInstance() {
     // Checks if the first boss controller was instantiated, if not, instantiates it.
     if (!m_instance){
         m_instance = new FirstBossController();
+    } else {
+        // Do nothing
     }
+    
     return m_instance;
 }
 
@@ -175,6 +178,8 @@ void FirstBossController::FirstAttackSurge() {
     // Compares the number of the current tentacle.
     if (m_currentTentacle == currentTentacleNumber) {
         m_currentTentacle = 1;
+    } else {
+        // Do nothing
     }
 
     m_tentacles[m_currentTentacle]->ClearCollisions();
