@@ -73,6 +73,8 @@ void FirstBossCentralEffectScript::ComponentUpdate() {
     // Checks the boss state.
     if (m_boss) {
         m_animator->PlayAnimation("firstBossCentralAnimation1");
+    } else {
+        // Do nothing
     }
 }
 
@@ -96,5 +98,7 @@ void FirstBossCentralEffectScript::FixedComponentUpdate() {
                                                 - GetOwner()->GetHeight() / 2
                                                 + GetOwner()->GetHeight()
                                                 / bossYPosition;
+    } else {
+        // Do nothing
     }
 }
