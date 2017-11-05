@@ -20,6 +20,7 @@ SceneManager::~SceneManager() {
 }
 
 SceneManager *SceneManager::GetInstance() {
+    INFO("SceneManager - Get Instance");
     // Check for something diferent of instace and instace a new Scene Manager.
     if (!m_instance) {
         m_instance = new SceneManager();
@@ -28,6 +29,7 @@ SceneManager *SceneManager::GetInstance() {
 }
 
 void SceneManager::SetCurrentScene(std::string sceneName) {
+    INFO("SceneManager - Set currante scene");
     auto found = m_scenes.find(sceneName);
     // Check for found diferent of scenes and set the current state.
     if (found != m_scenes.end()) {
@@ -46,15 +48,18 @@ void SceneManager::SetCurrentScene(std::string sceneName) {
 
 // Get the current scene name.
 std::string SceneManager::GetCurrentSceneName() {
+    INFO("SceneManager - Get currante scene name");
     return m_currentScene.second->GetName();
 }
 
 void SceneManager::AddScene(std::pair<std::string, Scene *> scenePair) {
+    INFO("SceneManager - Add scene");
     scenePair.second->SetName(scenePair.first);
     m_scenes.insert(scenePair);
 }
 
 void SceneManager::Start() {
+    INFO("SceneManager - Start");
     for (auto scene : m_scenes) {
         // Check for the state equal to deactivated and active it.
         if (scene.second->GetState() == SCENE_DEACTIVATED) {
@@ -64,6 +69,7 @@ void SceneManager::Start() {
 }
 
 void SceneManager::Update() {
+    INFO("SceneManager - Update");
     // Check the current scene and update.
     if (m_currentScene.second) {
         m_currentScene.second->Update();
@@ -71,6 +77,7 @@ void SceneManager::Update() {
 }
 
 void SceneManager::DrawUpdate() {
+    INFO("SceneManager - Draw Update");
     // Check the current scene and update the draw.
     if (m_currentScene.second) {
         m_currentScene.second->DrawUpdate();
@@ -78,6 +85,7 @@ void SceneManager::DrawUpdate() {
 }
 
 void SceneManager::FixedUpdate() {
+    INFO("SceneManager - Fixed update");
     // Check the current scene and fix the update.
     if (m_currentScene.second) {
         m_currentScene.second->FixedUpdate();
@@ -85,6 +93,7 @@ void SceneManager::FixedUpdate() {
 }
 
 Scene *SceneManager::GetScene(std::string name) {
+    INFO("SceneManager - Get Scene");
     for (auto pair : m_scenes) {
         if (pair.first == name) {
             return pair.second;
