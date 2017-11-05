@@ -17,6 +17,7 @@ PlayerAttackScript::PlayerAttackScript(GameObject *owner) : Script(owner) {
     the component, scene and the GameObject to starts.
 */
 void PlayerAttackScript::Start() {
+    INFO("Player Attack Script - Start");
 
     CreateAnimations();
     // Get the position.
@@ -42,6 +43,7 @@ void PlayerAttackScript::Start() {
     and after that the image is renderer.
 */
 void PlayerAttackScript::CreateAnimations() {
+    INFO("Player Attack Script - Create Animations");
 
     // Renderer the bullet image.
     auto bulletImage = new Image("assets/Sprites/green_bullet.png",0,0,124, 124);
@@ -55,6 +57,7 @@ void PlayerAttackScript::CreateAnimations() {
 the game).
 */
 void PlayerAttackScript::ComponentUpdate() {
+    INFO("Player Attack Script - Component Update");
 
     player =  SceneManager::GetInstance()->GetCurrentScene()->
               GetGameObject("NakedMan");
@@ -104,6 +107,7 @@ void PlayerAttackScript::ComponentUpdate() {
     to check the bullet speed.
 */
 void PlayerAttackScript::FixedComponentUpdate() {
+    INFO("Player Attack Script - Fixes component update");
     GameCollisionCheck();
 
     bulletSpeed = bulletSpeed;
@@ -117,6 +121,7 @@ void PlayerAttackScript::FixedComponentUpdate() {
     collisions, like the bullet, and check the velocity for exemple.
 */
 void PlayerAttackScript::GameCollisionCheck() {
+    INFO("Player Attack Script - Game Collisions Check");
     // The loop get the collisions according to the tag set in the ifs.
     for (auto object : GetOwner()->GetCollisions()) {
         // If that collisions is the bullet, get his collisions.
@@ -147,5 +152,6 @@ void PlayerAttackScript::GameCollisionCheck() {
     opposite when shoot is true.
 */
 void PlayerAttackScript::SetShoot(bool m_shoot) {
+    INFO("Player Attack Script - Set Shoot");
     this->shoot = m_shoot;
 }
