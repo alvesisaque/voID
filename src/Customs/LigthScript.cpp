@@ -10,6 +10,7 @@ LightScript::LightScript(GameObject *owner) : Script(owner) {}
     position, the animator and the input.
 */
 void LightScript::Start() {
+    INFO("LightScript - Start");
     // Create animations, define position and animator by gameobject.
     CreateAnimations();
     position = GetOwner()->GetPosition();
@@ -24,6 +25,7 @@ void LightScript::Start() {
     light image, the light animation and animator.
 */
 void LightScript::CreateAnimations(){
+    INFO("LightScript - Create Animations");
     // Instantiating lightimage by image file and define its positons.
     auto lightImage = new Image("assets/luz.png",0,0,682, 512);
 
@@ -43,6 +45,7 @@ void LightScript::CreateAnimations(){
     and get his instance, currante scene and object ("NakedMan")
 */
 void LightScript::ComponentUpdate() {
+    INFO("LightScript - Component Update");
     // Defining player.
     player = SceneManager::GetInstance()->GetCurrentScene()->GetGameObject("NakedMan");
     // Check for the player and its animator and input state.
@@ -67,6 +70,7 @@ void LightScript::ComponentUpdate() {
     there is a player and get his position x and y.
 */
 void LightScript::FixedComponentUpdate() {
+    INFO("LightScript - Fixed Component Update");
     // Check for the player's state, and if is true, sets its x and y positions.
     if (player) {
         position->m_x = player->GetPosition()->m_x - GetOwner()->GetWidth() / middlePosition + 40;
