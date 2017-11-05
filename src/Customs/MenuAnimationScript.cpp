@@ -1,4 +1,5 @@
 #include "Customs/MenuAnimationScript.hpp"
+#include "Log/log.hpp"
 
 #include <stdio.h>
 

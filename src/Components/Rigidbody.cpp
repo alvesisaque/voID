@@ -8,6 +8,8 @@
 #include "Globals/ComponentTypes.hpp"
 #include "Math/Vector.hpp"
 
+#include "Log/log.hpp"
+
 
 /**
     @brief Initializes RectangleCollider instance.

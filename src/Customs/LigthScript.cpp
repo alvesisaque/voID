@@ -1,5 +1,6 @@
 #include "Customs/LightScript.hpp"
 #include "Globals/EngineGlobals.hpp"
+#include "Log/log.hpp"
 
 const int middlePosition = 2;
 

@@ -6,6 +6,7 @@
 
 #include "Customs/PlayerAttackScript.hpp"
 #include "Globals/EngineGlobals.hpp"
+#include "Log/log.hpp"
 #include "Customs/NakedManScript.hpp"
 
 PlayerAttackScript::PlayerAttackScript(GameObject *owner) : Script(owner) {

@@ -5,6 +5,7 @@
 */
 
 #include "Customs/GameOverScript.hpp"
+#include "Log/log.hpp"
 
 const int quantityFrameLine = 22;
 const int quantityFrameColumn = 12;

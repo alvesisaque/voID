@@ -5,6 +5,8 @@
 */
 
 #include "Customs/FirstBossScene.hpp"
+#include "Log/log.hpp"
+
 
 FirstBossScene::FirstBossScene() {
 

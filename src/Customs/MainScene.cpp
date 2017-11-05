@@ -6,6 +6,8 @@
 
 #include "Customs/MainScene.hpp"
 #include "Customs/MenuAnimationScript.hpp"
+#include "Log/log.hpp"
+
 
 const int middlePosition = 2;
 

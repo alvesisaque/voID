@@ -1,5 +1,6 @@
 #include "Customs/CentralLightScript1.hpp"
 #include "Customs/ForestActivatorScript2.hpp"
+#include "Log/log.hpp"
 #include "Globals/EngineGlobals.hpp"
 
 const int quantityFrame = 13;

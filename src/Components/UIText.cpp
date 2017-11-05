@@ -6,6 +6,9 @@
 
 #include "Components/UIText.hpp"
 
+#include "Log/log.hpp"
+
+
 /**
     @brief Initializes UIText instance.
     @param[in] GameObject *owner - owns the component.
