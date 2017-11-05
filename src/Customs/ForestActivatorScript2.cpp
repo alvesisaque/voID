@@ -15,6 +15,7 @@ ForestActivatorScript2::ForestActivatorScript2(GameObject *owner) : Script(owner
     position, animator, controller, input and the map.
 */
 void ForestActivatorScript2::Start() {
+    INFO("ForestActivatorScript - Start");
     /*
         Create animations, define position, animator through gameobject.
         Defines map and sets its zoom proportion vector using width and height.
@@ -38,6 +39,8 @@ void ForestActivatorScript2::Start() {
     the forest and the animation of the forest.
 */
 void ForestActivatorScript2::CreateAnimations(){
+    INFO("ForestActivatorScript - Create Animations");
+
     // Instantiating forest activator Sprite image and its position.
     auto forestactivatorSprite = new Image("assets/forestactivator.png", 0, 0,832, 64);
 
@@ -63,6 +66,7 @@ void ForestActivatorScript2::CreateAnimations(){
     @brief that function updates the components of the forest two.
 */
 void ForestActivatorScript2::ComponentUpdate() {
+    INFO("ForestActivatorScript - Component Update");
     // Check the animator's state, and ifs true, play animation and activate it.
     if (!animator->IsPlaying("FOREST ACTIVATOR ANIMATION") && activate==0 && runned==false) {
         animator->PlayAnimation("FOREST ACTIVATOR ANIMATION");
@@ -88,5 +92,5 @@ void ForestActivatorScript2::ComponentUpdate() {
     @brief that function fixs the components updates of the forest two.
 */
 void ForestActivatorScript2::FixedComponentUpdate() {
-
+    INFO("ForestActivatorScript - Fixed Component Update");
 }

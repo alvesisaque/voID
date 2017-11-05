@@ -15,6 +15,7 @@ MenuAnimationScript::MenuAnimationScript(GameObject *owner) : Script(owner) {
     position and the animator.
 */
 void MenuAnimationScript::Start() {
+    INFO("MenuAnimationsScript - Create Player Hit");
     // Create animations.
     CreateAnimations();
     position = GetOwner()->GetPosition();
@@ -28,6 +29,7 @@ void MenuAnimationScript::Start() {
     Set the frame and add the animations to the game.
 */
 void MenuAnimationScript::CreateAnimations() {
+    INFO("MenuAnimationsScript - Create Animations");
     // Instantiating the menu script animator.
     auto MenuAnimationScriptAnimator = new Animator(GetOwner());
 
@@ -59,6 +61,7 @@ void MenuAnimationScript::CreateAnimations() {
     @brief that function updates the components of the menu animation.
 */
 void MenuAnimationScript::ComponentUpdate() {
+    INFO("MenuAnimationsScript - Component Update");
     // Check the current state of the initial animation and animator, if false, plays it.
     if (!animator->IsPlaying("mainAnimation") && !initialAnimation) {
         initialAnimation = true;
@@ -78,5 +81,5 @@ void MenuAnimationScript::ComponentUpdate() {
     @brief that function fixs the components update of the menu animation.
 */
 void MenuAnimationScript::FixedComponentUpdate() {
-
+    INFO("MenuAnimationsScript - Fixed Component Update");
 }
