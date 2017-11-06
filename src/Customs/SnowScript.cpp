@@ -7,6 +7,8 @@
 
 #include "Customs/SnowScript.hpp"
 
+#include "Log/log.hpp"
+
 // Start snow script, zoom proportion
 const float vectorZoomProportionAxisX = 0;
 const float vectorZoomProportionAxisY = 0;
@@ -41,7 +43,7 @@ SnowScript::SnowScript(GameObject *owner) : Script(owner) {
     @brief Start the snow animation by setting the starting position.
 */
 void SnowScript::Start() {
-
+    INFO("SnowScript - initializing");
     // Creates the animations.
     CreateAnimations();
 
@@ -53,13 +55,14 @@ void SnowScript::Start() {
     input = InputSystem::GetInstance();
     GetOwner()->SetZoomProportion(Vector(vectorZoomProportionAxisX,
                                          vectorZoomProportionAxisY));
+    INFO("SnowScript - completed");
 }
 
 /**
     @brief Create the snow animation by setting the frames of snow.
 */
 void SnowScript::CreateAnimations() {
-
+    INFO("SnowScript - initializing create animations");
     // Creates the show image.
     auto snowImage = new Image(snowImagePath, snowImagePositionX, snowImagePositionY,
                                snowImageWidth, snowImageHeight);
@@ -77,6 +80,7 @@ void SnowScript::CreateAnimations() {
     // Creates the animator.
     auto weatherAnimator = new Animator(GetOwner());
     weatherAnimator->AddAnimation("snowAnimation", snowAnimation);
+    INFO("SnowScript - Create animations completed");
 }
 
 /**
