@@ -37,7 +37,7 @@ void GameOverScript::CreateAnimations() {
         Creates game-over animation by setting a image and a animation with
         defined frames positions over it.
     */
-    auto snowImage = new Image("assets/Ending_PARTE_FINAL.png",0,0,4096, 2048);
+    auto snowImage = new Image("assets/Ending_show_image.png",0,0,4096, 2048);
 
     auto gameOverAnimation= new Animation(GetOwner(),snowImage );
     for (int  line = 0; line < quantityFrameLine; line++) {
@@ -67,7 +67,7 @@ void GameOverScript::ComponentUpdate() {
     } else {
         // Do nothing
     }
-    
+
     if (input->GetKeyDown(INPUT_T) && play==0) {
         // animator->StopAllAnimations();
         AudioController::GetInstance()->PlayAudio("snowSound", -1);
