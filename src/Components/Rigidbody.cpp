@@ -26,6 +26,9 @@ void Rigidbody::FixedComponentUpdate() {
     if (m_gravity) {
         GetOwner()->AddVelocity(Vector(0, m_gravityForce));
     }
+    else {
+       // Do nothing
+    }
 
     // Sets the x,y positions in the owner component of the gameobject, according to its velocity.
     auto velocity  = GetOwner()->GetVelocity();

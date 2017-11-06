@@ -40,8 +40,12 @@ UIText::UIText(GameObject *owner, string message, string fontPath, int size,
     m_font = TTF_OpenFont(fontPath.c_str(), size);
 
     // Check if there is something diferent of the font and if is diferent print a error message.
-    if (!m_font)
+    if (!m_font) {
         SDL_TTF_ERROR("Font could not be loaded");
+    }
+    else {
+        // Do nothing
+    }
     m_color = {red, green, blue, alpha};
 
     m_background = {0, 0, 0, 0};
