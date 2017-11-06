@@ -64,8 +64,10 @@ void GameOverScript::ComponentUpdate() {
     // Check for the player and its animator and input state.
     if (play==1) {
         animator->PlayAnimation("snowAnimation");
+    } else {
+        // Do nothing
     }
-
+    
     if (input->GetKeyDown(INPUT_T) && play==0) {
         // animator->StopAllAnimations();
         AudioController::GetInstance()->PlayAudio("snowSound", -1);

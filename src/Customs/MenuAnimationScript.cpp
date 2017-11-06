@@ -67,6 +67,8 @@ void MenuAnimationScript::ComponentUpdate() {
     if (!animator->IsPlaying("mainAnimation") && !initialAnimation) {
         initialAnimation = true;
         animator->PlayAnimation("mainAnimation");
+    } else {
+        // Do nothing
     }
 
     // Check the current state of the initial animation, if true, checks the animator state. If false, plays the animator.
@@ -74,7 +76,11 @@ void MenuAnimationScript::ComponentUpdate() {
         if (!animator->IsPlaying("mainAnimation"))
         if (!animator->IsPlaying("mainAnimation2") && initialAnimation) {
             animator->PlayAnimation("mainAnimation2");
+        } else {
+            // Do nothing
         }
+    } else {
+        // Do nothing
     }
 }
 
