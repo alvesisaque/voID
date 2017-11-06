@@ -33,6 +33,9 @@ void PlayerAttackScript::Start() {
     if (map) {
         GetOwner()->SetZoomProportion(Vector(map->originalWidth/GetOwner()->originalWidth,map->originalHeight/GetOwner()->originalHeight));
     }
+    else {
+        // Do nothing
+    }
     player =  SceneManager::GetInstance()->GetCurrentScene()->GetGameObject("NakedMan");
 
     playerCollider = new RectangleCollider(GetOwner(), Vector(0, 0), GetOwner()->GetWidth(), GetOwner()->GetHeight(), 0);
@@ -99,7 +102,11 @@ void PlayerAttackScript::ComponentUpdate() {
             position->m_x = playerPosition.m_x;
             position->m_y = playerPosition.m_y;
             shoot = false;
+        } else {
+            // Do nothing
         }
+    } else {
+        // Do nothing
     }
 }
 
@@ -129,7 +136,7 @@ void PlayerAttackScript::GameCollisionCheck() {
         if (object->GetTag() == "Bullet") {
             GetOwner()->ClearCollisions();
         // If the collisions is the FirstBoss.
-    } else if (object->GetTag() == "FirstBoss") {
+        } else if (object->GetTag() == "FirstBoss") {
             cout << "Boss Colider" << endl;
             auto firstBossLifeScript = (FirstBossLifeScript*)SceneManager::GetInstance()
                ->GetCurrentScene()
@@ -140,7 +147,7 @@ void PlayerAttackScript::GameCollisionCheck() {
             GetOwner()->active = false;
             GetOwner()->ClearCollisions();
         // If the collisions is the FirstBossAtack.
-    } else if(object->GetTag() == "FirstBossAtack") {
+        } else if(object->GetTag() == "FirstBossAtack") {
             cout << "Boss Atack Colider" << endl;
             GetOwner()->ClearCollisions();
         }

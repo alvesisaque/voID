@@ -32,6 +32,8 @@ void ForestActivatorScript2::Start() {
     // Check for map, and if exists, sets its map on a vector.
     if (map) {
         GetOwner()->SetZoomProportion(Vector(map->originalWidth/GetOwner()->originalWidth,map->originalHeight/GetOwner()->originalHeight));
+    } else {
+        // Do nothing
     }
 }
 
@@ -73,11 +75,15 @@ void ForestActivatorScript2::ComponentUpdate() {
         animator->PlayAnimation("FOREST ACTIVATOR ANIMATION");
         activate=1;
         runned = true;
+    } else {
+        // Do nothing
     }
 
     // Check if runned and something diferent of animator is playing and active the animattion of the forest.
     if (runned && !animator->IsPlaying("FOREST ACTIVATOR ANIMATION")) {
         animator->PlayAnimation("FOREST ACTIVATOR ANIMATION2");
+    } else {
+        // Do nothing
     }
 
     // Checking script running state, and ifs true, activate the script.
@@ -86,6 +92,8 @@ void ForestActivatorScript2::ComponentUpdate() {
                        GetCurrentScene()->GetGameObject("CENTRAL LIGHT 1")->
                        GetComponent("CentralLightScript1");
         script->Activate();
+    } else {
+        // Do nothung
     }
 }
 
