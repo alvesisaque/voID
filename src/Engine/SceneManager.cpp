@@ -24,6 +24,8 @@ SceneManager *SceneManager::GetInstance() {
     // Check for something diferent of instace and instace a new Scene Manager.
     if (!m_instance) {
         m_instance = new SceneManager();
+    } else {
+        // Do nothing
     }
     return m_instance;
 }
@@ -35,12 +37,16 @@ void SceneManager::SetCurrentScene(std::string sceneName) {
     if (found != m_scenes.end()) {
         if (m_currentScene.second != nullptr) {
             m_currentScene.second->SetState(SCENE_HIDDEN);
+        } else {
+            // Do nothing
         }
 
         m_currentScene = std::make_pair(found->first, found->second);
         // Check for found diferent of scenes and set current the state.
         if (m_currentScene.second->GetState() == SCENE_DEACTIVATED) {
             m_currentScene.second->SetState(SCENE_ACTIVATED);
+        } else {
+            // Do nothing
         }
         m_currentScene.second->SetState(SCENE_SHOWN);
     }
@@ -64,6 +70,8 @@ void SceneManager::Start() {
         // Check for the state equal to deactivated and active it.
         if (scene.second->GetState() == SCENE_DEACTIVATED) {
             scene.second->SetState(SCENE_ACTIVATED);
+        } else {
+            // Do nothing
         }
     }
 }
@@ -73,6 +81,8 @@ void SceneManager::Update() {
     // Check the current scene and update.
     if (m_currentScene.second) {
         m_currentScene.second->Update();
+    } else {
+        // Do nothing
     }
 }
 
@@ -81,6 +91,8 @@ void SceneManager::DrawUpdate() {
     // Check the current scene and update the draw.
     if (m_currentScene.second) {
         m_currentScene.second->DrawUpdate();
+    } else {
+        // Do nothing
     }
 }
 
@@ -89,6 +101,8 @@ void SceneManager::FixedUpdate() {
     // Check the current scene and fix the update.
     if (m_currentScene.second) {
         m_currentScene.second->FixedUpdate();
+    } else {
+        // Do nothing
     }
 }
 
@@ -97,6 +111,8 @@ Scene *SceneManager::GetScene(std::string name) {
     for (auto pair : m_scenes) {
         if (pair.first == name) {
             return pair.second;
+        } else {
+            // Do nothing
         }
     }
     ERROR("Looking for " << name << " scene which does not exist");

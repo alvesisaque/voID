@@ -41,6 +41,8 @@ void Scene::Update() {
         // Check if is active and them update it.
         if (it->active) {
             it->Update();
+        } else {
+            // Do nothing
         }
     }
 }
@@ -58,6 +60,8 @@ void Scene::DrawUpdate() {
         // Check if is active and them update it.
         if (it->active) {
             it->DrawUpdate();
+        } else {
+            // Do nothing
         }
     }
 }
@@ -89,6 +93,8 @@ void Scene::FixedUpdate() {
         // Check if is active and them update it.
         if (it->active) {
             it->FixedUpdate();
+        } else {
+            // Do nothing
         }
     }
 }
@@ -164,6 +170,8 @@ GameObject *Scene::GetGameObject(std::string name) {
     for (auto it : m_gameObjects) {
         if (it->GetName() == name) {
             return it;
+        } else {
+            // Do nothing
         }
     }
     return nullptr;

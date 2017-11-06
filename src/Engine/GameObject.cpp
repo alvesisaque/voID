@@ -70,8 +70,12 @@ void GameObject::DrawUpdate() {
         for (auto component : it->second) {
             if (component->m_active) {
                 component->Update();
+            } else {
+                // Do nothing
             }
         }
+    } else {
+        // Do nothing
     }
 }
 
@@ -89,8 +93,12 @@ void GameObject::PhysicsUpdate() {
         for (auto component : it->second) {
             if (component->m_active) {
                 component->Update();
+            } else {
+                // Do nothing
             }
         }
+    } else {
+        // Do nothing
     }
 }
 
@@ -103,14 +111,18 @@ void GameObject::ComponentsUpdate() {
     // Search for the component type(COMMON) on the components vector, and set it.
     auto it = m_components.find(C_COMMON);
 
-        // If the component type wasn't found on the vector, updates the component.
-        if (it != m_components.end()) {
-            for (auto component : it->second) {
-                if (component->m_active) {
-                    component->Update();
+    // If the component type wasn't found on the vector, updates the component.
+    if (it != m_components.end()) {
+        for (auto component : it->second) {
+            if (component->m_active) {
+                component->Update();
+            } else {
+                // Do nothing
             }
-          }
-        }
+         }
+    } else {
+        // Do nothing
+    }
 }
 
 /**
@@ -160,6 +172,8 @@ Component *GameObject::GetComponent(std::string name) {
         for (auto value : key->second) {
             if (value->GetComponentName() == name) {
                 return value;
+            } else {
+                // Do nothing
             }
         }
     }
