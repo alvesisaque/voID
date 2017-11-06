@@ -45,7 +45,7 @@ void ForestActivatorScript2::CreateAnimations(){
     INFO("ForestActivatorScript - Create Animations");
 
     // Instantiating forest activator Sprite image and its position.
-    auto forestactivatorSprite = new Image("assets/forestactivator.png", 0, 0,832, 64);
+    auto forestactivatorSprite = new Image("assets/Forest_activator.png", 0, 0,832, 64);
 
     // Instantiating forest activator animation by gameobject components, and setting its image and frame.
     auto forestactivatorAnimation = new Animation(GetOwner(), forestactivatorSprite);
