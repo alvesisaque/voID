@@ -77,7 +77,6 @@ void FirstBossController::PositBoss() {
 void FirstBossController::PositAllTentacles() {
     // Runs through the game objects vector, and sets each tentacle position.
     for (auto tentacle : m_tentacles) {
-        Vector *position = m_player->GetPosition();
         tentacle->SetPosition(Vector(vectorXposition, vectorYposition));
   }
 }
